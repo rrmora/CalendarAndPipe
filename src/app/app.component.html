@@ -1,0 +1,12 @@
+<p>ngDate: {{today | date:'shortDate'}}</p>
+<p>localDate: {{today | localDate}}</p>
+<p>ngNumber: {{val | number}}</p>
+<p>localNumber: {{val | localNumber}}</p>
+
+<button (click)="norway()">Norway</button>
+<button (click)="sweden()">Sweden</button>
+<div style="width: 60%;">
+    <!-- <full-calendar *ngIf="options" [customButtons]="options.customButtons" defaultView="dayGridMonth" (dateClick)="options.dateClick($event)" [plugins]="calendarPlugins"></full-calendar> -->
+    <full-calendar *ngIf="options" #fullcalendar [editable]="true" [selectable]="true" [header]="options.header" [customButtons]="options.customButtons" (dateClick)="options.dateClick($event)" (eventClick)="options.eventClick($event)" [columnHeaderHtml]="options.columnHeaderHtml"
+        (eventClick)="eventClick($event)" [plugins]="options.plugins"></full-calendar>
+</div>
